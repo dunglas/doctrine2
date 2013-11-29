@@ -25,9 +25,11 @@ class PostgreSqlSchemaToolTest extends \Doctrine\Tests\OrmFunctionalTestCase
     public function testGetCreateSchemaSql()
     {
         $classes = array(
-            $this->_em->getClassMetadata('Doctrine\Tests\Models\CMS\CmsAddress'),
+            $this->_em->getClassMetadata('Doctrine\Tests\Models\CMS\CmsGroup'),
             $this->_em->getClassMetadata('Doctrine\Tests\Models\CMS\CmsUser'),
-            $this->_em->getClassMetadata('Doctrine\Tests\Models\CMS\CmsPhonenumber'),
+            $this->_em->getClassMetadata('Doctrine\Tests\Models\CMS\CmsAddress'),
+            $this->_em->getClassMetadata('Doctrine\Tests\Models\CMS\CmsEmail'),
+            $this->_em->getClassMetadata('Doctrine\Tests\Models\CMS\CmsPhonenumber')
         );
 
         $tool = new SchemaTool($this->_em);
@@ -88,9 +90,11 @@ class PostgreSqlSchemaToolTest extends \Doctrine\Tests\OrmFunctionalTestCase
     public function testGetDropSchemaSql()
     {
         $classes = array(
-            $this->_em->getClassMetadata('Doctrine\Tests\Models\CMS\CmsAddress'),
+            $this->_em->getClassMetadata('Doctrine\Tests\Models\CMS\CmsGroup'),
             $this->_em->getClassMetadata('Doctrine\Tests\Models\CMS\CmsUser'),
-            $this->_em->getClassMetadata('Doctrine\Tests\Models\CMS\CmsPhonenumber'),
+            $this->_em->getClassMetadata('Doctrine\Tests\Models\CMS\CmsAddress'),
+            $this->_em->getClassMetadata('Doctrine\Tests\Models\CMS\CmsEmail'),
+            $this->_em->getClassMetadata('Doctrine\Tests\Models\CMS\CmsPhonenumber')
         );
 
         $tool = new SchemaTool($this->_em);
